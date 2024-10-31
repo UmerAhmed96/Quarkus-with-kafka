@@ -21,7 +21,6 @@ import org.slf4j.LoggerFactory;
 @Path("/api/products")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
-
 public class ProductController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductController.class);
@@ -39,7 +38,7 @@ public class ProductController {
      * @return Response containing the saved ProductDTO
      */
     @POST
-    public Response saveProduct(@Valid ProductDTO request) {
+    public Response saveProduct( @Valid ProductDTO request) {
         LOGGER.debug("Saving Product {} ", request);
 
         ProductDTO sentMessage = productService.saveMessage(request);
